@@ -1,2 +1,2 @@
-ch.bfh.bti7054.w2013.q.BierShop
+ch.bfh.bti7054.w2013.q.FanShop
 ========================================
