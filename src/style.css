@@ -1,0 +1,221 @@
+body{
+    /*    background-color: gray;*/
+    background: url("images/bg2.jpg") ;
+}
+
+#container{
+    width: 940px;
+    /*    min-height: 800px;*/
+    margin: auto;
+    background-color: white;
+}
+
+#header{
+    background-color: white;
+    height: 40px;
+    width: 100%;
+
+    /*    float: right;*/
+
+}
+
+#header ul{
+    /*    float: right;*/
+}
+
+#header ul li{
+    float: right;
+    margin: 10px 10px;
+    font-family: Arial;
+
+}
+
+#header ul li a:hover{
+    background-color: red;
+}
+
+ul{
+    list-style: none;
+}
+
+#language{
+    color: blue;
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: small;
+
+
+}
+
+/*ul {
+    list-style: none;
+    
+}
+#header ul li{
+    
+    margin: 0 10px;
+}*/
+
+
+
+#logo{
+    background-color: green;
+    height: 100px;
+}
+
+#specialOffers{
+    background-color: red;
+    height: 300px;
+}
+
+#footer{
+    background-color: black;
+    height: 100px;
+    color: white;
+}
+
+/*Navigationsmenü*/
+#navigation ul ul{
+    display: none;
+
+}
+#navigation ul li:hover > ul {
+    display: block;
+}
+#navigation ul {
+    /*background: #efefef; 
+    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);  
+    box-shadow: 0px 0px 9px rgba(0,0,0,0.15);	*/
+    padding: 0 20px;
+    border-radius: 10px;  
+    list-style: none;
+    position: relative;
+    display: inline-table;
+}
+#navigation ul:after {
+    content: ""; 
+    clear: both; 
+    display: block;
+}
+#navigation ul li {
+    float: left;
+}
+#navigation ul li:hover {
+    background: #4b545f;
+    /*background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+    background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+    background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);*/
+}
+#navigation ul li:hover a {
+    color: #fff;
+}
+
+#navigation ul li a {
+    display: block;
+    padding: 25px 20px;
+    color: #757575; 
+    text-decoration: none;
+}
+
+#navigation ul ul {
+    background: #5f6975; 
+    border-radius: 0px; 
+    padding: 0;
+    position: absolute; 
+    top: 100%;
+}
+#navigation ul ul li {
+    float: none; 
+    border-top: 1px solid #6b727c;
+    border-bottom: 1px solid #575f6a;
+    position: relative;
+}
+#navigation ul ul li a {
+    padding: 15px 40px;
+    color: #fff;
+}	
+#navigation ul ul li a:hover {
+    background: #4b545f;
+}
+
+/*Produkte Startseite*/
+.product{
+    width: 260px;
+    height: 272px;
+    background-color: grey;
+    margin: 5px 20px;
+    float: left;
+    position: relative;
+}
+
+.product_container{
+    /*    position: static;*/
+    overflow: auto;
+}
+
+.product-picture { 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;  
+    height: 100%;
+   
+}
+
+.product:hover .product-picture{
+    opacity: 0;
+}
+
+.product:hover .product-info{
+    opacity: 1;
+    /*    background-color: yellow;*/
+}
+.product .product-info{
+    background-color: rgba(255, 231, 179, 0.3);  
+    opacity: 0;
+}
+
+.product-info{
+    position: absolute;
+    top: 0;
+    left: 0;  
+    width: 100%;
+    height: 100%;
+        
+}
+
+
+/*Produkt-Details*/
+#product-details {
+    height: 700px;
+}
+
+#product-details .bezeichnung{
+    background-color: aqua;
+    height: 40px;
+    text-align: center;
+}
+
+#product-details .picture {
+    width: 40%;
+    background-color: aquamarine;
+    float: left;
+    position: relative;
+    height: 660px;
+}
+
+#product-details .preis {
+    height: 50px;
+    
+}
+
+#product-details .beschreibung{
+    height: 500px;
+    
+}
+
+
+
