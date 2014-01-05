@@ -29,7 +29,7 @@ $resultat = $ergebnis->fetch_object();
                 <form action="index.php?seite=warenkorb" method="post">
                     <?php 
                     echo "<input type=\"hidden\" name=\"bezeichnung\" value=\"" . $resultat->$bez . "\" />";
-                    echo "<input type=\"hidden\" name=\"preis\" value=\"" . $resultat->preis . "\" />";
+                    echo "<input type=\"hidden\" name=\"prize\" value=\"" . $resultat->preis . "\" />";
                     echo "<input type=\"hidden\" name=\"beschreibung\" value=\"" . $resultat->$beschreibung . "\" />";
                     ?>
 

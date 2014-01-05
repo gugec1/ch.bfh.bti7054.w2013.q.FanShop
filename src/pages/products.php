@@ -7,15 +7,15 @@
     $bez = 'bezeichnung_'.$lang;
     
     while($product = mysqli_fetch_object($products)){
-    echo '<div class="product">
-            <div class="product-picture">
-                <img src="images/' .$product->bild.'"/>
+    echo "<div class=\"product\">
+            <div class=\"product-picture\">
+                <img src=\"images/" .$product->bild."\"/>
             </div>
-            <div class="product-info">
-                <h2>'.$product->$bez.'</h2>
-                <a class="detail_button" href="index.php?seite=product_details&productID='.$product->id.'">View</a>
+            <div class=\"product-info\">
+                <h2>".$product->$bez."</h2>
+                <a class=\"detail_button\" href=\"index.php?seite=product_details&productID=".$product->id."\">View</a>
              </div> 
-          </div>';
+          </div>";
     } ;
     ?>
  </div>
