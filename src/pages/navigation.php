@@ -38,17 +38,16 @@ $menuItems = array(
 
 <ul>
     <li><a href="index.php?seite=startseite"><?php echo $menuItems["startseite"][$lang]?></a></li>
-    <li><a href="index.php?seite=neuigkeiten"><?php echo $menuItems["neu"][$lang]?></a></li>
-    <li><a href=""><?php echo $menuItems["mannschaft"][$lang]?></a>
-        <ul>
+    <li><a href="index.php?seite=team"><?php echo $menuItems["mannschaft"][$lang]?></a>
+<!--        <ul>
             <li><a href="">Test1</a></li>
             <li><a href="">Test2</a></li>
-        </ul>
+        </ul>-->
     </li>
-    <li><a href=""><?php echo $menuItems["damen"][$lang]?></a>
-    <li><a href=""><?php echo $menuItems["herren"][$lang]?></a>
+    <li><a href="index.php?seite=women"><?php echo $menuItems["damen"][$lang]?></a>
+    <li><a href="index.php?seite=men"><?php echo $menuItems["herren"][$lang]?></a>
 
-    <li><a href=""><?php echo $menuItems["kinder"][$lang]?></a></li>
-    <li><a href=""><?php echo $menuItems["fanartikel"][$lang]?></a></li>
+    <li><a href="index.php?seite=kids"><?php echo $menuItems["kinder"][$lang]?></a></li>
+    <li><a href="index.php?seite=accessoires"><?php echo $menuItems["fanartikel"][$lang]?></a></li>
     
 </ul>

@@ -1,16 +1,20 @@
 <?php
 
-function getTranslation($id, $language, $db) {
+require_once("functions.php");
+//include ("classes/DB.php");
 
-
-
-    $sql = "SELECT " . $language . " FROM translations where id ='"  . $id ."'";
+function getTranslation($id, $lang) {
+    global $db;
+    require_db();
+   
+    $sql = "SELECT " . $lang . " FROM translations where id ='"  . $id ."'";
     //$sql = "Select * from translations";
     $ergebnis = $db->query($sql);
+//    $db->close();
     $resultat = $ergebnis->fetch_object();
 
     if(isset($resultat)){
-        return $resultat->$language;
+        return $resultat->$lang;
     } 
 }
 

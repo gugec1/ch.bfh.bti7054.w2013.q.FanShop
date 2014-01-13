@@ -1,20 +1,44 @@
 body{
     /*    background-color: gray;*/
     background: url("images/bg2.jpg") ;
+    font-family: "Open Sans", helvetica, arial;
 }
+h1{
+    font-size: 48px;
+}
+h2{
+	font-size: 30px;
+        margin-left: 20px;
+}   
+
+h3{
+    margin-left: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: rgb(153, 153, 153);
+}
+
 
 #container{
     width: 940px;
     /*    min-height: 800px;*/
     margin: auto;
     background-color: white;
+    
+    
 }
 
 #header{
-    background-color: white;
+/*    background-color: rgb(153, 153, 153);*/
     height: 40px;
     width: 100%;
-
+    
+    
     /*    float: right;*/
 
 }
@@ -31,7 +55,7 @@ body{
 }
 
 #header ul li a:hover{
-    background-color: red;
+/*    background-color: red;*/
 }
 
 ul{
@@ -60,19 +84,22 @@ ul{
 
 
 #logo{
-    background-color: green;
-    height: 100px;
+/*    background: rgba(255, 231, 179, 0.3);*/
+    height: 55px;
 }
 
 #specialOffers{
-    background-color: red;
     height: 300px;
 }
 
 #footer{
-    background-color: black;
+    margin-top: 100px;
+    padding-left: 20px;
+    padding-top: 15px;
     height: 100px;
-    color: white;
+    color: black;
+        background-color: rgb(153, 153, 153);
+    /*    width: 100%;*/
 }
 
 /*Navigationsmenü*/
@@ -145,8 +172,9 @@ ul{
 .product{
     width: 260px;
     height: 272px;
-    background-color: grey;
-    margin: 5px 20px;
+/*    background-color: grey;*/
+    background: rgba(255,255,255,0.5);
+    margin: 5px 25px;
     float: left;
     position: relative;
 }
@@ -154,19 +182,24 @@ ul{
 .product_container{
     /*    position: static;*/
     overflow: auto;
+    
 }
 
-.product-picture { 
+.product-picture   { 
     position: absolute; 
     top: 0;
     left: 0;
-    width: 100%;  
-    height: 100%;
    
+    /*    height: 270px;
+        width: 260px;*/
+    /*   width: 100%;  */
+    /*    height: 100%;*/
+
 }
 
 .product:hover .product-picture{
     opacity: 0;
+    transition: all 1s linear;
 }
 
 .product:hover .product-info{
@@ -184,7 +217,21 @@ ul{
     left: 0;  
     width: 100%;
     height: 100%;
-        
+
+}
+
+.product-info h2{
+    text-align: center;
+/*    color: cadetblue;*/
+    margin-left: 0;
+}
+
+
+a.detail_button {
+/*    margin-left: 100px;*/
+/*width: 100%;
+    text-align: center;*/
+margin-left: 105px;
 }
 
 
@@ -194,14 +241,19 @@ ul{
 }
 
 #product-details .bezeichnung{
-    background-color: aqua;
+    background-color: beige;
     height: 40px;
     text-align: center;
 }
 
+#product-details .bezeichnung p{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
 #product-details .picture {
     width: 40%;
-    background-color: aquamarine;
+/*    background-color: aquamarine;*/
     float: left;
     position: relative;
     height: 660px;
@@ -209,13 +261,109 @@ ul{
 
 #product-details .preis {
     height: 50px;
-    
+    margin-top: 10px;
+    margin-left: 10px;
+
 }
 
 #product-details .beschreibung{
     height: 500px;
-    
+
+}
+
+/*Checkout*/
+
+#checkout {
+    /*     width: 100%;*/
+    /*     height: 300px;*/
+    /*     position: relative;*/
+
+}
+#checkout .cart-container{
+    height: 600px;
+}
+#checkout .cart{
+    /*    height: 300px;*/
+    width: 100%;
+    background-color: goldenrod;
+}
+
+#checkout .address{
+    height: 400px;
+    float: left;
+    width: 50%;
+    background-color: activecaption;
+
+    position: relative;
+
+}
+
+#checkout .shipping{
+    width: 50%;
+    background-color: brown;
+    margin: auto;
+    padding: auto;
+    float: left;
+
+
 }
 
 
+#map {
+    width: 300px;
+    height: 300px;
+}
 
+.loginform{
+    margin-left: 10px;
+}
+
+
+/* Basic jQuery Slider essential styles */
+
+ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
+li.bjqs-slide{position:absolute; display:none;}
+ul.bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
+ul.bjqs-controls.v-centered li a{position:absolute;}
+ul.bjqs-controls.v-centered li.bjqs-next a{right:0;}
+ul.bjqs-controls.v-centered li.bjqs-prev a{left:0;}
+ol.bjqs-markers{list-style: none; padding: 0; margin: 0; width:100%;}
+ol.bjqs-markers.h-centered{text-align: center;}
+ol.bjqs-markers li{display:inline;}
+ol.bjqs-markers li a{display:inline-block;}
+p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
+
+#banner-fade,
+#banner-slide{
+	margin-bottom: 60px;
+}
+
+ul.bjqs-controls.v-centered li a{
+	display:block;
+	padding:10px;
+	background:#fff;
+	color:#000;
+	text-decoration: none;
+}
+
+ul.bjqs-controls.v-centered li a:hover{
+	background:#000;
+	color:#fff;
+}
+
+ol.bjqs-markers li a{
+	padding:5px 10px;
+	background:#000;
+	color:#fff;
+	margin:5px;
+	text-decoration: none;
+}
+
+ol.bjqs-markers li.active-marker a,
+ol.bjqs-markers li a:hover{
+	background: #999;
+}
+
+p.bjqs-caption{
+	background: rgba(255,255,255,0.5);
+}

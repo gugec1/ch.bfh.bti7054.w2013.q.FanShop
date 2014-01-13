@@ -1,33 +1,45 @@
 <?php
-require_once ('functions/db_connection.php');
+include("classes/DB.php");
+include('functions.php');
+require_db();
+include("classes/ShoppingCart.php");
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <?php
-
 $menu = array(
-					'startseite' => 'home.php',
-                                        'neuigkeiten' => 'neu.php',
-                                        'login' => 'login.php',
-                                        'product_details' => 'product_details.php',
-                                        'warenkorb' => 'warenkorb.php'
-					);
+    'startseite' => 'home.php',
+    'login' => 'login.php',
+    'product_details' => 'product_details.php',
+    'warenkorb' => 'warenkorb.php',
+    'checkout' => 'checkout.php',
+    'registration' => 'registration.php',
+    'purchase' => 'purchase.php',
+    'men' => 'products.php',
+    'women' => 'products.php',
+    'team' => 'products.php',
+    'kids' => 'products.php',
+    'accessoires' => 'products.php',
+    'kontakt' => 'kontakt.php',
+    'account' => 'account.php'
+);
 
 if (isset($_GET['seite']) && !empty($menu[$_GET['seite']])) {
-	$aktuelleseite = $menu[$_GET['seite']]; } 
-else {
-	$aktuelleseite = $menu['startseite'];
+    $aktuelleseite = $menu[$_GET['seite']];
+} else {
+    $aktuelleseite = $menu['startseite'];
 }
 
-require_once("functions/language.php");
-$lang = getLanguage();
 
-//change language
-if(isset($_GET['language']) && ($_GET['language'])!= $lang ){
-    setLanguage($_GET['language']); 
-}
 
 include("functions/translation.php");
-
+require_lang();
+//change language
+if (isset($_GET['language']) && ($_GET['language']) != $lang) {
+    setLanguage($_GET['language']);
+}
 ?> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -36,30 +48,35 @@ include("functions/translation.php");
     <head>
         <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type" />
         <link href="style.css" rel="stylesheet" title="Default Style" type="text/css" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css' /> 
         <title>FanShop</title>
     </head>
 
+
+
     <body>
+
 
         <div id="container">
             <div id="header">
                 <?php include ("pages/header.php"); ?>
             </div>
             <div id="logo">
-            Logo
-	</div>
-           <div id="navigation">
-		<?php include ("pages/navigation.php"); ?>	
-	</div>
+                <h1>Fussball Fanshop</h2>
+            </div>
+            <div id="navigation">
+                <?php include ("pages/navigation.php"); ?>	
+            </div>
             <div id="main">
-                
-               <?php include "pages/".$aktuelleseite;  ?>    
-               
-                
+
+                <?php include "pages/" . $aktuelleseite; ?>    
+
+
             </div>
 
             <div id="footer">
-                footer
+                <?php include ("pages/footer.php"); ?>
             </div>
         </div>
 

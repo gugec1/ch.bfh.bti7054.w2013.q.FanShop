@@ -1,5 +1,5 @@
 <div id="specialOffers">
-    Special offers
+    <?php include("specials.php") ?>
 </div>
 <div id="products">
     <?php include ("products.php"); ?>

@@ -1,19 +1,16 @@
 <?php
 
-
-    global $datenbank;
-    
+function getDB(){
     $host = "localhost";
     $user = "root";
     $password = "";
-    $dbase = "fanShop";
+    $dbase = "fanshop";
 
+    return $datenbank = mysqli_connect($host, $user, $password, $dbase);
 
-    $datenbank = mysqli_connect($host, $user, $password, $dbase);
-
-    if (!$datenbank){
+    if (!$datenbank) {
         exit("Verbindungsfehler: " . mysqli_connect_error());
     }
-
+}
 
 ?>

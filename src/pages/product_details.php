@@ -1,61 +1,71 @@
 <?php
-$productID = $_GET['productID'];
+//Details zu gewähltem Produkt anzeigen
+//Produktdetails abholen
+if (isset($_GET['productID'])) {
+    $productID = $_GET['productID'];
 
-$sql = "SELECT * FROM products where id = '" . $productID . "'";
-$ergebnis = $datenbank->query($sql);
-$bez = 'bezeichnung_' . $lang;
-$beschreibung = 'beschreibung_' . $lang;
-
-$resultat = $ergebnis->fetch_object();
+    $sql = "SELECT * FROM products where id = '" . $productID . "'";
+    $ergebnis = $db->query($sql);
+    $bez = 'bezeichnung_' . $lang;
+    $beschreibung = 'beschreibung_' . $lang;
+    $resultat = $ergebnis->fetch_object();
+}
 ?>
 
 <div id="product-details">
 
+    <!--    Details darstellen-->
     <?php
     if (isset($resultat)) {
         ?>
+        <!-- Bezeichnung   -->
         <div class="bezeichnung">
             <p><?php echo $resultat->$bez; ?></p>
         </div>
+        <!-- Bild   -->
         <div class="picture">
-
             <?php echo '<img src="images/' . $resultat->bild . '"width = 100%" />'; ?>
         </div>
+<!--        Details (Preis, Beschreibung, Grössenwahl, Anzahlwahl)-->
         <div class="details">
-            <div class="preis"><?php echo $resultat->preis; ?></div>
+            <div class="preis">Preis: <?php echo $resultat->preis; ?> CHF</div>
             <div class="beschreibung"><?php echo $resultat->$beschreibung; ?></div>
             <div class="auswahlfelder">
 
                 <form action="index.php?seite=warenkorb" method="post">
-                    <?php 
+                    <?php
                     echo "<input type=\"hidden\" name=\"bezeichnung\" value=\"" . $resultat->$bez . "\" />";
                     echo "<input type=\"hidden\" name=\"prize\" value=\"" . $resultat->preis . "\" />";
                     echo "<input type=\"hidden\" name=\"beschreibung\" value=\"" . $resultat->$beschreibung . "\" />";
+                    echo "<input type=\"hidden\" name=\"id\" value=\"$productID\" />";
                     ?>
 
                     <?php
-                    echo getTranslation('size', $lang, $datenbank) . ":";
+                    
+                    //Grössenwahl
+                    if ($resultat->changeableSize == 1) {
+                        echo getTranslation('size', $lang, $db) . ":";
+                        echo "<select name=\"size\">";
+                        echo "<option value=\"s\">S</option>";
+                        echo "<option value=\"m\">M</option>";
+                        echo "<option value=\"l\">L</option>";
+                        echo "<option value=\"xl\">XL</option>";
+                        echo "<option value=\"xxl\">XXL</option>";
+                        echo "</select><br/>";
+                    } else {
+                        echo "<input type=\"hidden\" name=\"size\" value=\"\" />";
+                    }
                     ?>
-
-                    <select name="size">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                        <option value="xxl">XXL</option>
-                    </select>
+                    
                     <?php
-                    echo getTranslation('anzahl', $lang, $datenbank) . ":";
+                    //Anzahl:
+                    echo getTranslation('anzahl', $lang, $db) . ":";
                     ?>
                     <input type="text" name="anzahl" value="1">
                     <?php
-                    echo getTranslation('beschriftung', $lang, $datenbank) . ":";
+                    //Button 'Zu Warenkorb hinzufügen'
+                    echo "<input type=\"submit\" value=\"" . getTranslation('zuWarenkorb', $lang, $db) . "\"  />";
                     ?>
-                    <input type="text" name="beschriftung">
-
-                    <?php echo "<input type=\"submit\" value=\"" . getTranslation('zuWarenkorb', $lang, $datenbank) . "\"  />";
-                    ?>
-
                 </form>
 
             </div>
