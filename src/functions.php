@@ -2,11 +2,10 @@
 
 function require_db() {
     global $db;
-    require_once('functions/db_connection.php');
+//    require_once('functions/db_connection.php');
     require_once("classes/DB.php");
     
     if (!isset($db)) {
-        //$db = getDB();
         $db = new DB();
     } 
 }

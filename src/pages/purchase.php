@@ -1,5 +1,6 @@
-<?php
 
+<?php
+ require_once("classes/EMail.php");       
 //Individuelle Adresse eingegeben?
 if ($_POST["newAddress"] == "yes") {
     //Neue Adresse zwischenspeichern
@@ -44,9 +45,16 @@ $db->close();
 //Mail versenden
 //todo
 
+$message = "Danke für Ihre Bestellung. Sie können Ihre Bestellung jederzeit online im Fussball Fanshop als PDF abrufen.";
+//$mail= new EMail();
+//$mail->Email();
+//$mail->sendMail("gugec1@bfh.ch", "Fussball Fanshop", $message);
+
+
+
 //Warenkorb leeren
 $cart->clear();
 
-echo "<p>Die Bestellung wurde erfolgreich erfasst. Als Bestätigung erhalten Sie in Kürze eine E-Mail mit den Bestelldaten.</p>";
+echo "<p>Die Bestellung wurde erfolgreich erfasst. Als Bestätigung erhalten Sie in Kürze eine E-Mail mit Ihren Bestelldaten.</p>";
 echo "<a href=\"pages/orderPdf.php?orderid=$orderID\" target=\"_blank\">Bestellbestätigung</a>";
 ?>

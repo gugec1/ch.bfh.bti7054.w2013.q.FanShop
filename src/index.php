@@ -32,8 +32,6 @@ if (isset($_GET['seite']) && !empty($menu[$_GET['seite']])) {
     $aktuelleseite = $menu['startseite'];
 }
 
-
-
 include("functions/translation.php");
 require_lang();
 //change language

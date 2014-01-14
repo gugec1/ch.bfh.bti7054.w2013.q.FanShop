@@ -1,6 +1,7 @@
 <div class="product_container">
 
     <?php
+//Waren der entsprechenden Kategorie laden und anzeigen
     if (isset($_GET["seite"])) {
         $page = $_GET["seite"];
 
@@ -33,12 +34,16 @@
             default:
                 $query = "nodata";
         }
+    } else {
+        echo "<h3>Home</h3>";
+        $query = "Select * from products where front = 1;";
+    }
 
-        if ($query != "nodata") {
-            $products = $db->query($query);
-            $bez = 'bezeichnung_' . $lang;  //Bezeichnung in entsprechender Sprache
-            while ($product = $products->fetch_object()) {
-                echo "<div class=\"product\">
+    if ($query != "nodata") {
+        $products = $db->query($query);
+        $bez = 'bezeichnung_' . $lang;  //Bezeichnung in entsprechender Sprache
+        while ($product = $products->fetch_object()) {
+            echo "<div class=\"product\">
             <div class=\"product-picture\">
                 <img src=\"images/" . $product->bild . " \"width = 100%\"/> 
             </div>
@@ -47,10 +52,9 @@
                 <a class=\"detail_button\" href=\"index.php?seite=product_details&productID=" . $product->id . "\">View</a>
              </div> 
           </div>";
-            };
-            $db->close();
-        } else
-            echo "Keine Daten vorhanden.";
+        };
+    } else {
+        echo "Keine Daten vorhanden.";
     }
     ?>
 

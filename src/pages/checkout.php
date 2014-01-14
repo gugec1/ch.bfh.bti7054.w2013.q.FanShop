@@ -58,7 +58,7 @@ if (!isset($_SESSION["userid"])) {
 
     <div id="checkout">
         <div class="cart">
-            <h1>Warenkorb</h1>
+            <h2>Warenkorb</h2>
             <?php
             $cart = $_SESSION["shoppingCart"];
             $cart->display("no");
@@ -71,7 +71,7 @@ if (!isset($_SESSION["userid"])) {
             <form class="confirm" id="confirmForm" action="index.php?seite=purchase" method="post">
 
                 <div class="address">
-                    <h1>Adresse</h1>
+                    <h2>Adresse</h2>
                     <?php
                     $userid = $_SESSION["userid"];
                     $query = ("SELECT lastname, firstname, street, zip, city from user WHERE userid = '$userid'");
@@ -82,7 +82,7 @@ if (!isset($_SESSION["userid"])) {
 
                     $address = $res->fetch_object();
                     echo "<ul>";
-                    echo "<li><strong>Vorname, Nachname:</strong> $address->lastname,  $address->firstname </li>";
+                    echo "<li><strong>Nachname, Vorname:</strong> $address->lastname,  $address->firstname </li>";
                     echo "<li><strong>Strasse:</strong> $address->street</li>";
                     echo "<li><strong>PLZ:</strong> $address->zip</li>";
                     echo "<li><strong>Ort:</strong> $address->city</li>";
@@ -107,12 +107,12 @@ if (!isset($_SESSION["userid"])) {
                 </div>
 
                 <div class="shipping">    
-                    <h1>Zahlungsart</h1>
+                    <h2>Zahlungsart</h2>
                     Rechnung <br/>
                     <input type="radio" name="paymentRadios" value="rechnung" id="payment-type1"><br/>
                     Vorauszahlung </br>
                     <input type="radio" name="paymentRadios" value="vorauszahlung" id="payment-type2"><br/>
-                    <h1>Versandsart</h1>
+                    <h2>Versandsart</h2>
                     Standardpaket <br/>
                     <input type="radio" name="shippingRadios" value="normal" id="shipping-type1"><br/>
                     Express-Paket </br>

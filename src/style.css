@@ -7,16 +7,18 @@ h1{
     font-size: 48px;
 }
 h2{
-	font-size: 30px;
-        margin-left: 20px;
+    font-size: 30px;
+    margin-left: 20px;
 }   
 
 h3{
     margin-left: 20px;
 }
 a{
-    text-decoration: none;
+    text-decoration: none; 
     color: black;
+    font-style: italic;
+    /*background-color: rgba(255, 231, 179, 0.3);  */
 }
 
 a:hover{
@@ -29,16 +31,16 @@ a:hover{
     /*    min-height: 800px;*/
     margin: auto;
     background-color: white;
-    
-    
+
+
 }
 
 #header{
-/*    background-color: rgb(153, 153, 153);*/
+    /*    background-color: rgb(153, 153, 153);*/
     height: 40px;
     width: 100%;
-    
-    
+
+
     /*    float: right;*/
 
 }
@@ -55,7 +57,7 @@ a:hover{
 }
 
 #header ul li a:hover{
-/*    background-color: red;*/
+    /*    background-color: red;*/
 }
 
 ul{
@@ -84,7 +86,7 @@ ul{
 
 
 #logo{
-/*    background: rgba(255, 231, 179, 0.3);*/
+    /*    background: rgba(255, 231, 179, 0.3);*/
     height: 55px;
 }
 
@@ -98,7 +100,7 @@ ul{
     padding-top: 15px;
     height: 100px;
     color: black;
-        background-color: rgb(153, 153, 153);
+    background-color: rgb(153, 153, 153);
     /*    width: 100%;*/
 }
 
@@ -145,6 +147,7 @@ ul{
     padding: 25px 20px;
     color: #757575; 
     text-decoration: none;
+    font-style: normal;
 }
 
 #navigation ul ul {
@@ -163,6 +166,7 @@ ul{
 #navigation ul ul li a {
     padding: 15px 40px;
     color: #fff;
+
 }	
 #navigation ul ul li a:hover {
     background: #4b545f;
@@ -172,7 +176,7 @@ ul{
 .product{
     width: 260px;
     height: 272px;
-/*    background-color: grey;*/
+    /*    background-color: grey;*/
     background: rgba(255,255,255,0.5);
     margin: 5px 25px;
     float: left;
@@ -182,14 +186,14 @@ ul{
 .product_container{
     /*    position: static;*/
     overflow: auto;
-    
+
 }
 
 .product-picture   { 
     position: absolute; 
     top: 0;
     left: 0;
-   
+
     /*    height: 270px;
         width: 260px;*/
     /*   width: 100%;  */
@@ -222,16 +226,16 @@ ul{
 
 .product-info h2{
     text-align: center;
-/*    color: cadetblue;*/
+    /*    color: cadetblue;*/
     margin-left: 0;
 }
 
 
 a.detail_button {
-/*    margin-left: 100px;*/
-/*width: 100%;
-    text-align: center;*/
-margin-left: 105px;
+    /*    margin-left: 100px;*/
+    /*width: 100%;
+        text-align: center;*/
+    margin-left: 105px;
 }
 
 
@@ -253,7 +257,7 @@ margin-left: 105px;
 
 #product-details .picture {
     width: 40%;
-/*    background-color: aquamarine;*/
+    /*    background-color: aquamarine;*/
     float: left;
     position: relative;
     height: 660px;
@@ -280,19 +284,21 @@ margin-left: 105px;
 
 }
 #checkout .cart-container{
-    height: 600px;
+    height: 480px;
+    margin-left: 20px;
 }
 #checkout .cart{
     /*    height: 300px;*/
     width: 100%;
-    background-color: goldenrod;
+    background-color: rgba(255, 231, 179, 0.3); 
+    margin-left: 20px;
 }
 
 #checkout .address{
     height: 400px;
     float: left;
     width: 50%;
-    background-color: activecaption;
+    /*    background-color: rgba(255, 231, 179, 0.3);  */
 
     position: relative;
 
@@ -300,9 +306,9 @@ margin-left: 105px;
 
 #checkout .shipping{
     width: 50%;
-    background-color: brown;
+    /*background-color: rgba(255, 231, 179, 0.3);  */
     margin: auto;
-    padding: auto;
+/*    padding: auto;*/
     float: left;
 
 
@@ -335,35 +341,35 @@ p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bot
 
 #banner-fade,
 #banner-slide{
-	margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 ul.bjqs-controls.v-centered li a{
-	display:block;
-	padding:10px;
-	background:#fff;
-	color:#000;
-	text-decoration: none;
+    display:block;
+    padding:10px;
+    background:#fff;
+    color:#000;
+    text-decoration: none;
 }
 
 ul.bjqs-controls.v-centered li a:hover{
-	background:#000;
-	color:#fff;
+    background:#000;
+    color:#fff;
 }
 
 ol.bjqs-markers li a{
-	padding:5px 10px;
-	background:#000;
-	color:#fff;
-	margin:5px;
-	text-decoration: none;
+    padding:5px 10px;
+    background:#000;
+    color:#fff;
+    margin:5px;
+    text-decoration: none;
 }
 
 ol.bjqs-markers li.active-marker a,
 ol.bjqs-markers li a:hover{
-	background: #999;
+    background: #999;
 }
 
 p.bjqs-caption{
-	background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.5);
 }
