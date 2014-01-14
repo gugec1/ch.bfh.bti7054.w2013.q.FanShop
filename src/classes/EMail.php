@@ -11,21 +11,22 @@ class EMail {
         $mail = new PHPMailer();
 
         $mail->IsSMTP();  // telling the class to use SMTP
-        $mail->Mailer = "smtp";
-        $mail->Host = "ssl://smtp.gmail.com";
-        $mail->Port = 465;
+        $mail->SMTPDebug = 0;
         $mail->SMTPAuth = true; // turn on SMTP authentication
-        $mail->Username = ""; // SMTP username
-        $mail->Password = ""; // SMTP password 
-
-
-        $mail->AddReplyTo("ch.gugelmann@gmail.com");
+        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 465;
+        $mail->Username = "fussballfanshop"; // SMTP username
+        $mail->Password = "fussballfanshop1"; // SMTP password 
+//        $mail->Mailer = "smtp";
+        
+        $mail->AddReplyTo("fussballfanshop@gmail.com");
 
         $this->mail = $mail;
     }
 
     public function sendMail($to, $subject, $body) {
-        $this->mail->From = "ch.gugelmann@gmail.com";
+        $this->mail->SetFrom("fussballfanshop@gmail.com", "Fussball Fanshop") ;
 
         $this->mail->AddAddress($to);
 

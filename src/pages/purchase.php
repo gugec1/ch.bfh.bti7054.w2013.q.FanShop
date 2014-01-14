@@ -19,6 +19,7 @@ if ($_POST["newAddress"] == "yes") {
     $shippingAddress = $address->lastname . ", " . $address->firstname . ", " . $address->street . ", " . $address->zip . ", " . $address->city;
 }
 
+
 //Versand- & Zahlungsart
 $shippingMethod = $_POST["shippingRadios"];
 $paymentMethod = $_POST["paymentRadios"];
@@ -40,15 +41,18 @@ foreach($cart->items as $product){
      $db->query($query1);
      
  }
-$db->close();
+//$db->close();
 
 //Mail versenden
 //todo
+$query = "Select email from fanshop.user WHERE userid = '$userid'";
+$res = $db->query($query);
+$emailaddress = $res->fetch_object();
 
 $message = "Danke für Ihre Bestellung. Sie können Ihre Bestellung jederzeit online im Fussball Fanshop als PDF abrufen.";
-//$mail= new EMail();
-//$mail->Email();
-//$mail->sendMail("gugec1@bfh.ch", "Fussball Fanshop", $message);
+$mail= new EMail();
+$mail->Email();
+$mail->sendMail($emailaddress->email, "Fussball Fanshop", $message);
 
 
 
