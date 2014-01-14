@@ -1,0 +1,15 @@
+Installation manual
+
+Voraussetzung:
+-Xampp
+-MySql
+
+Todo:
+- Ordner src in htdocs-Ordner des xampp-Verzeichnisses kopieren
+- MySql Tabellen erstellen: dazu Queries ausführen (Odner task_10-> create_tables.sql)
+    (Standard-Zugriffsdaten für Datenbank: user: root, pw: ""(kein PW))
+    Empfohlen: PW auf DB setzen & auch in DB.php anpassen
+- Im Browser http://localhost/FanShop/src/ eingeben zum Webseite aufrufen
+- Produkte & Kategorien via MySql-Oberfläche füllen (Bilder in Ordner images ablegen)
+    (oder Queries verwenden-> siehe Ordner task_10/admin.php)
+- Fertig

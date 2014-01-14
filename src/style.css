@@ -1,5 +1,5 @@
+/*Grundeinstellungen*/
 body{
-    /*    background-color: gray;*/
     background: url("images/bg2.jpg") ;
     font-family: "Open Sans", helvetica, arial;
 }
@@ -18,31 +18,22 @@ a{
     text-decoration: none; 
     color: black;
     font-style: italic;
-    /*background-color: rgba(255, 231, 179, 0.3);  */
 }
 
 a:hover{
     color: rgb(153, 153, 153);
 }
 
-
 #container{
     width: 940px;
-    /*    min-height: 800px;*/
     margin: auto;
     background-color: white;
-
-
 }
 
+/*Header*/
 #header{
-    /*    background-color: rgb(153, 153, 153);*/
     height: 40px;
     width: 100%;
-
-
-    /*    float: right;*/
-
 }
 
 #header ul{
@@ -83,8 +74,6 @@ ul{
     margin: 0 10px;
 }*/
 
-
-
 #logo{
     /*    background: rgba(255, 231, 179, 0.3);*/
     height: 55px;
@@ -101,7 +90,6 @@ ul{
     height: 100px;
     color: black;
     background-color: rgb(153, 153, 153);
-    /*    width: 100%;*/
 }
 
 /*Navigationsmenü*/
@@ -113,11 +101,6 @@ ul{
     display: block;
 }
 #navigation ul {
-    /*background: #efefef; 
-    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
-    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
-    background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%);  
-    box-shadow: 0px 0px 9px rgba(0,0,0,0.15);	*/
     padding: 0 20px;
     border-radius: 10px;  
     list-style: none;
@@ -134,9 +117,6 @@ ul{
 }
 #navigation ul li:hover {
     background: #4b545f;
-    /*background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
-    background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
-    background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);*/
 }
 #navigation ul li:hover a {
     color: #fff;
@@ -172,11 +152,10 @@ ul{
     background: #4b545f;
 }
 
-/*Produkte Startseite*/
+/*Produkt Übersicht*/
 .product{
     width: 260px;
     height: 272px;
-    /*    background-color: grey;*/
     background: rgba(255,255,255,0.5);
     margin: 5px 25px;
     float: left;
@@ -184,7 +163,6 @@ ul{
 }
 
 .product_container{
-    /*    position: static;*/
     overflow: auto;
 
 }
@@ -193,11 +171,6 @@ ul{
     position: absolute; 
     top: 0;
     left: 0;
-
-    /*    height: 270px;
-        width: 260px;*/
-    /*   width: 100%;  */
-    /*    height: 100%;*/
 
 }
 
@@ -208,7 +181,6 @@ ul{
 
 .product:hover .product-info{
     opacity: 1;
-    /*    background-color: yellow;*/
 }
 .product .product-info{
     background-color: rgba(255, 231, 179, 0.3);  
@@ -226,15 +198,11 @@ ul{
 
 .product-info h2{
     text-align: center;
-    /*    color: cadetblue;*/
     margin-left: 0;
 }
 
 
 a.detail_button {
-    /*    margin-left: 100px;*/
-    /*width: 100%;
-        text-align: center;*/
     margin-left: 105px;
 }
 
@@ -257,7 +225,6 @@ a.detail_button {
 
 #product-details .picture {
     width: 40%;
-    /*    background-color: aquamarine;*/
     float: left;
     position: relative;
     height: 660px;
@@ -298,28 +265,23 @@ a.detail_button {
     height: 400px;
     float: left;
     width: 50%;
-    /*    background-color: rgba(255, 231, 179, 0.3);  */
-
     position: relative;
 
 }
 
 #checkout .shipping{
     width: 50%;
-    /*background-color: rgba(255, 231, 179, 0.3);  */
     margin: auto;
-/*    padding: auto;*/
     float: left;
-
-
 }
 
-
+/*Map*/
 #map {
     width: 300px;
     height: 300px;
 }
 
+/*Loginform*/
 .loginform{
     margin-left: 10px;
 }

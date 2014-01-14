@@ -1,14 +1,24 @@
 <?php
+//Index-File
 include("classes/DB.php");
-include('functions.php');
-require_db();
+include("functions.php");
 include("classes/ShoppingCart.php");
+include("functions/translation.php");
+
+//Datenbankverbindung herstellen
+require_db();
+//Session setzen
 if (!isset($_SESSION)) {
     session_start();
 }
-?>
 
-<?php
+require_lang();
+//change language
+if (isset($_GET['language']) && ($_GET['language']) != $lang) {
+    setLanguage($_GET['language']);
+}
+
+//Seiten 
 $menu = array(
     'startseite' => 'home.php',
     'login' => 'login.php',
@@ -31,13 +41,6 @@ if (isset($_GET['seite']) && !empty($menu[$_GET['seite']])) {
 } else {
     $aktuelleseite = $menu['startseite'];
 }
-
-include("functions/translation.php");
-require_lang();
-//change language
-if (isset($_GET['language']) && ($_GET['language']) != $lang) {
-    setLanguage($_GET['language']);
-}
 ?> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -50,15 +53,11 @@ if (isset($_GET['language']) && ($_GET['language']) != $lang) {
         <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css' /> 
         <title>FanShop</title>
     </head>
-
-
-
     <body>
-
 
         <div id="container">
             <div id="header">
-                <?php include ("pages/header.php"); ?>
+                <?php include ("pages/header.php"); ?>      
             </div>
             <div id="logo">
                 <h1>Fussball Fanshop</h2>
@@ -67,10 +66,7 @@ if (isset($_GET['language']) && ($_GET['language']) != $lang) {
                 <?php include ("pages/navigation.php"); ?>	
             </div>
             <div id="main">
-
                 <?php include "pages/" . $aktuelleseite; ?>    
-
-
             </div>
 
             <div id="footer">
