@@ -1,12 +1,13 @@
 <?php
-//include("classes/DB.php");
 //Checkout-Formular
+//
 //User nicht eingeloggt
 if (!isset($_SESSION["userid"])) {
     echo "Zum Bezahlen müssen Sie angemeldet sein.";
     echo "<br/>";
     echo "<a href='index.php?seite=login'>Zum Login</a>";
 } else {
+    
 //User eingeloggt->Adresse, Warenkorb, Versandoptionen anzeigen   
     ?>
     <script type="text/javascript">
@@ -18,7 +19,8 @@ if (!isset($_SESSION["userid"])) {
                 document.getElementById("editAddress").style = "display: none;";
             }
         }
-                                                    
+                   
+        //Check ob individuelle Adresse eingegben wurde          
         function validate(){
                                            
             if(document.getElementById("changeAddress").checked==true){
@@ -64,10 +66,10 @@ if (!isset($_SESSION["userid"])) {
             $cart->display("no");
             ?>
         </div>
+        
+<!--        Anzeige Warenkorb, Adresse, Bestell- und Versandsmethode-->
         <div class="cart-container">
-
-
-
+            
             <form class="confirm" id="confirmForm" action="index.php?seite=purchase" method="post">
 
                 <div class="address">

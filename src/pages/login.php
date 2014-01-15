@@ -25,7 +25,6 @@ if (isset($_SESSION["userid"])) {
         $res = $checkUser->query("SELECT username, userid FROM user WHERE username = '$username' AND password = '$pw'");
         $row = $res->fetch_assoc();
 
-        //echo "username: " . $row['username'];
 
         if ($res != NULL && $row['username'] != NULL) {
             $_SESSION["userid"] = $row['userid'];
@@ -37,8 +36,6 @@ if (isset($_SESSION["userid"])) {
 
         $checkUser->close();
     } else {
-
-
 
         echo "<div class=\"loginform\">";
         echo "<form name = 'login' action= 'index.php?seite=login' method='post'>";

@@ -1,4 +1,6 @@
 function validate() {
+        //Validierung Registrierungsformular
+        //RegEx funktionieren teilweise noch nicht korrekt. todo: verbessern
         
         var lastName = document.getElementById("lastName").value;
         var expLastName = new RegExp("[A-Za-z]"); //Buchstaben,Leerzeichen, Bindestrich erlaubt 
@@ -67,6 +69,27 @@ function validate() {
             return false;
         }
         
+        var username = document.getElementById("username").value;
+        var expUsername = new RegExp("[A-Za-z0-9\s\-]");
+        if(username.length == 0){
+            alert("Bitte geben Sie den Usernamen ein.")
+            return false;
+        }else if(!expUsername.test(email)){
+            alert("Der Username besitzt unerlaubte Zeichen.");
+            document.getElementById("username").select();
+            return false;
+        }
+        
+        var password = document.getElementById("password").value;
+        var expPassword = new RegExp("[A-Za-z0-9.]+@[A-Za-z0-9.]+\.[A-Za-z]{2,3}");
+        if(password.length == 0){
+            alert("Bitte geben Sie ein Passwort ein.")
+            return false;
+        }else if(!expPassword.test(email)){
+            alert("Der Username besitzt unerlaubte Zeichen.");
+            document.getElementById("password").select();
+            return false;
+        }
         
         document.getElementById("registrationForm").submit();
         

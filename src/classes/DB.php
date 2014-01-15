@@ -1,5 +1,5 @@
 <?php
-
+//Datenbankverbindung (mysqli)
 class DB extends mysqli {
     
     function __construct() {
@@ -12,6 +12,7 @@ class DB extends mysqli {
         
     }
     
+    //not used at the moment
     public function checkUsername($username){
         $res = $this->query("Select * from user where username = $username");
         if($res.num_rows() > 0){

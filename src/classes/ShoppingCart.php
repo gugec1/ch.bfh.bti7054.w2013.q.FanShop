@@ -6,7 +6,7 @@ class ShoppingCart {
 
     public $items = array();
 
-     //Artikel hinzufügen
+    //Artikel hinzufügen
     //Bezeichnung, Anzahl, Grösse, Preis, ArtikelID
     public function addArticle($art, $num, $size, $price, $id) {
         $artOrig = $art;
@@ -89,7 +89,7 @@ class ShoppingCart {
                 echo "</div>";
             }
         } else {
-            //Warenkorb ohne Buttons
+            //Warenkorb ohne Buttons (Remove und Kaufen-Button)
             echo "<div class = \"warenkorb\" >";
             echo "<table border=\"0\">";
             echo "<tr><th>Article</th><th>Items</th><th>Prize</th><th>Total</th></tr>";

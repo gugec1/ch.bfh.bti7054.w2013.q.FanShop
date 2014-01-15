@@ -20,45 +20,39 @@ class PDF extends FPDF {
         $this->Cell(0, 10, 'Lieferadresse:', 0, 1, 'L');
         $this->SetFont('Arial', '', 10);
         $this->address($order_id);      //Adresse anzeigen
-        // Simple separator
         $this->Ln(10);
         $this->Line($this->GetX(), $this->GetY(), $this->GetX() + 190, $this->GetY());
 
-        // Details
-
+        // Produkte
         $this->SetFont('Arial', 'B', 10);
-        $this->Cell(0, 10, 'Order Details:', 0, 1, 'L');
+        $this->Cell(0, 10, 'Produkt:', 0, 1, 'L');
         $this->SetFont('Arial', '', 10);
-
         $this->order($order_id);     //Produkte anzeigen
-
         $this->Cell(0, 10, "Danke für Ihre Bestellung.", 0, 1, 'L');
-
-        $this->Output("order_Fanshop.pdf", "D");
+        $this->Output("order_Fanshop.pdf", "D");    //Dateinamen
     }
 
     public function header() {
-
+        //Dokumentenheader
         $this->SetXY($this->lMargin, 5, $this->tMargin, 5);
-        //$this->Image('../doc/ci/logo-black.png', $this->lMargin, 5, 40, 10);
         $this->SetFont('Arial', 'B', 11);
         $this->Cell(0, 11, $this->title, 0, 0, 'C');
         $this->SetXY($this->lMargin, $this->GetY() + 20);
     }
 
     public function footer() {
+        //Footer
         $this->SetXY(10, - 15);
         $this->SetFont('Arial', 'B', 10);
         $this->Cell(0, 10, 'Page ' . $this->PageNo(), 0, 0, 'C');
     }
 
     private function address($order_id) {
+        //Adresse
         $query = "SELECT order_date, shipping_address, payment_method, shipping_method FROM fanshop.order WHERE orderid = '$order_id' ";
-
         $db = new DB();
         $res = $db->getData($query);
         $db->close();
-
         $address = $res->fetch_object();
         $this->Cell(0, 4, "Address: $address->shipping_address", 0, 1, 'L');
         $this->Cell(0, 4, "Zahlungsmethode: $address->payment_method", 0, 1, 'L');
@@ -67,7 +61,7 @@ class PDF extends FPDF {
 
     private function order($order_id) {
 
-        //Bestelldatum:
+        //Bestelldatum
         $query = "SELECT order_date from fanshop.order WHERE orderid = '$order_id' ";
 
         $db = new DB();

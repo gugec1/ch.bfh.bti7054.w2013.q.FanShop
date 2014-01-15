@@ -1,6 +1,6 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmLQ7T-fWHRisGsqZcuEpi55TECdSSZgQ&sensor=false"></script>
 <script type="text/javascript">
-    
+    //Google-Map
     function initialize() {
         var latLng = new google.maps.LatLng(47.2060162, 7.542674);
 				

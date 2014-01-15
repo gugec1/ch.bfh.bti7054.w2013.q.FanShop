@@ -1,27 +1,6 @@
 
 <?php
-/*
-  $nav = array(
-  "categorie1" => array("name" => "M?nner", "a", "b", "c"),
-  "categorie2" => array("name" => "Frauen", "d", "e", "f"),
-  "categorie3" => array("name" => "Kinder", "g", "h", "i"),
-  "categorie4" => array("name" => "Accesoires", "x"),
-  );
-
-  $index = 1;
-  //Hauptkategorien
-  foreach ($nav as $mainCategorie){
-  echo $nav["categorie".$index]["name"]."<br />";
-
-
-  //Subkategorien
-  for($i=0;$i<count($mainCategorie)-1 ;$i++){
-
-  echo $mainCategorie[$i]."<br />";
-  }
-  $index += 1;
-  }
- */
+//Navigationsmenü
 
 $menuItems = array(
     "startseite" => array("de" => "Home", "en" => "Home"),
@@ -32,8 +11,6 @@ $menuItems = array(
     "kinder" => array("de" => "Kinder", "en" => "Kids"),
     "fanartikel" => array("de" => "Fanartikel", "en" => "Accessoires")
 );
-
-
 ?>
 
 <ul>

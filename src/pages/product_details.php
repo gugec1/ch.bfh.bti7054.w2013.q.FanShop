@@ -26,7 +26,7 @@ if (isset($_GET['productID'])) {
         <div class="picture">
             <?php echo '<img src="images/' . $resultat->bild . '"width = 100%" />'; ?>
         </div>
-<!--        Details (Preis, Beschreibung, Grössenwahl, Anzahlwahl)-->
+        <!--        Details (Preis, Beschreibung, Grössenwahl, Anzahlwahl)-->
         <div class="details">
             <div class="preis">Preis: <?php echo $resultat->preis; ?> CHF</div>
             <div class="beschreibung"><?php echo $resultat->$beschreibung; ?></div>
@@ -41,7 +41,6 @@ if (isset($_GET['productID'])) {
                     ?>
 
                     <?php
-                    
                     //Grössenwahl
                     if ($resultat->changeableSize == 1) {
                         echo getTranslation('size', $lang, $db) . ":";
@@ -56,7 +55,7 @@ if (isset($_GET['productID'])) {
                         echo "<input type=\"hidden\" name=\"size\" value=\"\" />";
                     }
                     ?>
-                    
+
                     <?php
                     //Anzahl:
                     echo getTranslation('anzahl', $lang, $db) . ":";
@@ -67,12 +66,8 @@ if (isset($_GET['productID'])) {
                     echo "<input type=\"submit\" value=\"" . getTranslation('zuWarenkorb', $lang, $db) . "\"  />";
                     ?>
                 </form>
-
             </div>
-
         </div>
-
-
         <?php
     } else {
         echo '<p>Es konnte kein Artikel gefunden werden.</p>';

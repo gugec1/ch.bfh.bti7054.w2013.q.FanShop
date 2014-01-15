@@ -9,7 +9,7 @@ Todo:
 - MySql Tabellen erstellen: dazu Queries ausführen (Odner task_10-> create_tables.sql)
     (Standard-Zugriffsdaten für Datenbank: user: root, pw: ""(kein PW))
     Empfohlen: PW auf DB setzen & auch in DB.php anpassen
-- Im Browser http://localhost/FanShop/src/ eingeben zum Webseite aufrufen
-- Produkte & Kategorien via MySql-Oberfläche füllen (Bilder in Ordner images ablegen)
+- Im Browser http://localhost/FanShop/src/ eingeben um Webseite aufzurufen
+- Produkte & Kategorien via MySql-Oberfläche (localhost/phpmyadmin) erstellen/bearbeiten (Bilder in Ordner images ablegen)
     (oder Queries verwenden-> siehe Ordner task_10/admin.php)
 - Fertig
